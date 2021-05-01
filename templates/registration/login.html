@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="207011433677-q1rgc6epl3uuuhivibjvlam0vv0fk6o8.apps.googleusercontent.com">
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+</head>
+<body>
+<div class="sidenav">
+    <div class="login-main-text">
+        <h2 class="center">Hello Kitty</h2>
+    </div>
+
+    <!-- image for login on the left -->
+    <div>
+        <img >
+    </div>
+</div>
+
+<div class="main">
+    <div class="col-md-7 col-sm-5"> 
+        
+        <div class="login-form">
+            <div class="login-text">Login</div>
+
+            <form method="POST">
+                
+                <div class="form-group">
+                    <div class="row ">
+                        <div class="col">Username</div>
+
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Username">
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <div class="row align-items-start">
+                        <div class="col">Password</div>
+
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Password">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Login</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+</body>
