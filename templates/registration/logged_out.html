@@ -2,15 +2,14 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<a href="{% url 'login'%}"></a>
+<a href="{% url 'login'%}">Log in</a>
 {% load static %}
 
 <style>
 body {
   background-image: url("{% static 'images/logout-auntum.png' %}");
   background-repeat: no-repeat;
-  background-attachment: fixed;  
-  background-size: cover;
+  background-attachment: fixed; 
 }
 </style>
 
