@@ -111,3 +111,8 @@ body {
     background-color: pink;
     cursor: pointer;
 }
+
+.icons {
+    width:100%;
+    height:auto;
+}

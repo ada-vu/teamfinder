@@ -3,9 +3,14 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="207011433677-q1rgc6epl3uuuhivibjvlam0vv0fk6o8.apps.googleusercontent.com">
+
 </head>
 
-{%load static %}
+{% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 
 <div class="sidenav">
@@ -20,10 +25,10 @@
 </div>
 
 <div class="main">
-    <div class="col-md-4 col-sm-16"> 
-
+    <div class="col-md-7 col-sm-5"> 
+        
         <div class="login-form">
-            <div class="login-text">Log in</div>
+            <div class="login-text">Login</div>
 
             <form method="POST">
                 

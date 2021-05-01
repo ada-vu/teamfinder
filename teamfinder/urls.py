@@ -27,5 +27,4 @@ urlpatterns = [
     path('accounts/signup', core_views.signup),
     path('core/', include('core.urls')),
     path('', RedirectView.as_view(url='/core/', permanent=True))
-    # static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
