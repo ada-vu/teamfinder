@@ -1,18 +1,14 @@
-
 {% extends "base_generic.html" %}
 
 {% block content %}
 <a href="{% url 'login'%}">Log in</a>
+
 {% load static %}
+<link href="{% static 'css/logged_out.css'%}" rel="stylesheet">
 
-<style>
-body {
-  background-image: url("{% static 'images/logout-auntum.png' %}");
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
-}
-</style>
-
-<h1>You have been signed out!</h1>
+<header>
+    <h2> You have been signed out! </h2> 
+    <img src="{% static 'images/logout-walking.gif' %}" alt="Cat Walking">
+</header>
 
 {% endblock %}
