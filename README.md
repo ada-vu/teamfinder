@@ -1,4 +1,4 @@
-# ruhacks-2021
+# Teamfinder
 
 ## Quick Start
 
