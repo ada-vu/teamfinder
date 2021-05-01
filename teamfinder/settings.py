@@ -134,7 +134,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Static file serving.
 # http://whitenoise.evans.io/en/stable/django.html#django-middleware
