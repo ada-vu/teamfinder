@@ -1,0 +1,97 @@
+/*
+CSS File for group_form.html
+*/
+
+body {
+  font-family: 'Open Sans';
+  padding-left: 142px;
+  font-size: 18px;
+}
+
+h1 {
+font-weight: 1000px;
+font-size: 40px;
+font-size: bold;
+line-height: 68.09px;
+display: flex;
+align-items: center;
+text-align: center;
+
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+  /*justify-content: flex-end;*/
+  /*text-align: right;*/
+  line-height: 26px;
+  margin-bottom: 43px;
+  height: 68px;
+  text-align: center;
+
+}
+/* targets text inside */
+input[type="text"] {
+  text-align: auto;
+  padding-left: 40px;
+}
+
+input[name="roleseeking"] {
+  background-image:url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 40px;
+
+}
+
+input {
+  padding-left: 47;
+  width: 1105px;
+  border-radius: 72px;
+  border-color: #858383;
+  outline: none;
+}
+
+/* the dropdown button */
+.phase-btn {
+  color: #858383;
+  padding: 16px;
+  border-radius: 72px;
+  background-color: white;
+}
+/* the  dropdown class */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* Hidden items */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+/* the create buttn */
+.button {
+  border-radius: 76px;
+  width: 160px;
+  background: rgba(255, 39, 86, 0.5);
+  height: 68px;
+  color: white;
+  font-size: 30px;
+  float: right;
+}
