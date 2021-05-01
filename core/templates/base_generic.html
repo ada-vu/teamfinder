@@ -4,30 +4,30 @@
     <title>{% block title %}Team Finder{% endblock %}</title>
   </head>
   <body>
-    {% block content %} 
-    
     {%load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base-generic.css' %}">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/base-generic.css' %}"
+    />
 
     <nav class="nav">
       <div class="container">
-          <div class="logo">
-              <a href="#">HelloKitty</a>
-          </div>
-          <div class="main_list" id="mainListDiv">
-              <ul>
-                  <li><a href="#">Homepage</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Explore</a></li>
-                  <li><a href="#">Dashboard</a></li>
-                  <li><a href="#">Profile</a></li>
-              </ul>
-          </div>
+        <div class="logo">
+          <a href="#">HelloKitty</a>
+        </div>
+        <div class="main_list" id="mainListDiv">
+          <ul>
+            <li><a href="{% url 'index' %}">Homepage</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'projects' %}">Explore</a></li>
+            <li><a href="{% url 'index' %}">Dashboard</a></li>
+            <li><a href="{% url 'user-profile' %}">Profile</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
 
-    {% endblock %}
+    <div>{% block content %} {% endblock %}</div>
   </body>
 </html>
-
-
