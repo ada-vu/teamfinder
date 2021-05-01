@@ -1,0 +1,19 @@
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<a href="{% url 'login'%}"></a>
+{% load static %}
+
+<style>
+body {
+  background-image: url("{% static 'images/logout-auntum.png' %}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+</style>
+
+<h1>You have been signed out!</h1>
+
+{% endblock %}
