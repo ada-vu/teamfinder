@@ -8,13 +8,9 @@ body {
 }
 
 .form-control {
-    width: 600%;
+    width: 240%;
     border-radius: 70px;
     background-color: #F7EFEF;
-}
-
-.login-form {
-    padding-left: 20%;
 }
 
 .login-text {
@@ -50,7 +46,7 @@ body {
 
 @media screen and (min-width: 768px){
     .main{
-        margin-left: 40%; 
+        margin-left: 45%; 
     }
 
     .sidenav{
@@ -108,7 +104,7 @@ body {
     width: 50%;
     color: white;
     position: relative;
-    margin-left: 240%;
+    margin-left: 100%;
 }
 
 .submit-button:hover {
