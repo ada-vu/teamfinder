@@ -8,6 +8,9 @@ from .models import Skill, Profile, Project, Application
 def index(request):
     return render(request, 'index.html')
 
+def about(request):
+    return render(request, 'core/about.html')
+
 def signup(request):
     return render(request, 'core/signup.html')
 
