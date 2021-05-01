@@ -6,3 +6,6 @@ def index(request):
 
 def signup(request):
     return render(request, 'core/signup.html')
+
+def group_detail(request):
+    return render(request, 'core/group_detail.html')
