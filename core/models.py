@@ -94,7 +94,10 @@ class Project(models.Model):
         max_length=200,
         choices=DEVELOPMENT_PHASE_CHOICES,
         help_text="Choose your current development phase")
-    expected_end_date = models.DateField(null=True, blank=True)
+    expected_end_date = models.DateField(
+        null=True,
+        blank=True,
+        help_text="mm/dd/yyyy")
 
     class Meta:
         ordering = ['created_date', 'title', 'creator']

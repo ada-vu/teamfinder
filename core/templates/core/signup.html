@@ -84,7 +84,8 @@
         <p class="text-danger">{{ form.errors }} Please try again.</p>
         {% endif %}
 
-        <button type="submit" class="submit-button">Register</button>
+        <input type="submit" class="submit-button" value="Sign Up" />
+        <input type="hidden" name="next" value="{{ next }}" />
       </form>
     </div>
   </div>

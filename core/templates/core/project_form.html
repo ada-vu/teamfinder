@@ -19,6 +19,7 @@ submitted page.
 </section>
 <section id="inputbox">
   <form method="POST" action="{% url 'create-projects' %}">
+    {% csrf_token %}
     <!--
       [] add eye glass to inside search box
       [] when user makes a search or entry it gets added below
@@ -28,6 +29,13 @@ submitted page.
 
       <div class="col">
         {% render_field form.title placeholder=form.title.help_text class="py-3" %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">{{ form.members.label_tag }}</div>
+
+      <div class="col">
+        {% render_field form.members placeholder=form.members.help_text class="my-4 py-3" %}
       </div>
     </div>
     <div class="row">
@@ -45,33 +53,37 @@ submitted page.
       </div>
     </div>
     <div class="row">
+      <div class="col">{{ form.team_skills.label_tag }}</div>
+
+      <div class="col">
+        {% render_field form.team_skills placeholder=form.team_skills.help_text class="my-4 py-3" %}
+      </div>
+    </div>
+    <div class="row">
       <div class="col">{{ form.development_phase.label_tag }}</div>
 
       <div class="col">
         {% render_field form.development_phase placeholder=form.development_phase.help_text class="my-4 py-3" %}
       </div>
     </div>
-    <label>
-      <input
-        type="text"
-        id="skillspreferred"
-        name="skillspreferred"
-        placeholder="Skills Preferred"
-      /><br />
-    </label>
-    <div class="dropdown">
-      <button class="phase-btn">Select Phase of Project</button>
-      <div class="dropdown-content">
-        <a href="#ideation">Ideation</a>
-        <a href="#planning">Planning</a>
-        <a href="#design">Design</a>
-        <a href="#develop">Develop</a>
-        <a href="#deploy">Deploy</a>
+    <div class="row">
+      <div class="col">{{ form.description.label_tag }}</div>
+
+      <div class="col">
+        {% render_field form.description placeholder=form.description.help_text class="my-4 py-3" %}
       </div>
     </div>
+    <div class="row">
+      <div class="col">{{ form.expected_end_date.label_tag }}</div>
+
+      <div class="col">
+        {% render_field form.expected_end_date placeholder=form.expected_end_date.help_text class="my-4 py-3" %}
+      </div>
+    </div>
+    
     <div class="create-button">
       <div class="button">
-        <button class="button">Create</button>
+        <input type="submit" class="submit-button" value="Create" />
       </div>
     </div>
   </form>
