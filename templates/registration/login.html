@@ -39,7 +39,7 @@
             <div class="col">{{ form.username.label_tag }}</div>
 
             <div class="col">
-              {{ form.username|add_class:"form-control" }}
+              {{ form.username|append_attr:"placeholder=Username"|add_class:"form-control" }}
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@
             <div class="col">{{ form.password.label_tag }}</div>
 
             <div class="col">
-                {{ form.password|add_class:"form-control" }}
+                {{ form.password|append_attr:"placeholder=Password"|add_class:"form-control" }}
             </div>
           </div>
         </div>

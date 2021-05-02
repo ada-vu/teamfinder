@@ -9,7 +9,6 @@ body {
 }
 /* adds background image and color for please check your email page */
 .verify-email-bckg {
-    background-image: url(core/images/mailing.png);
     background-repeat: no-repeat;
     background-color: #E6FAFF;
 }

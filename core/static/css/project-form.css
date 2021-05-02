@@ -2,13 +2,6 @@
 CSS File for group_form.html, group_form_dont.html and
 verify_email.html
 */
-
-body {
-  font-family: 'Open Sans';
-  padding-left: 142px;
-  font-size: 18px;
-}
-
 h1 {
 font-weight: 1000px;
 font-size: 40px;
@@ -36,23 +29,16 @@ color: #000000;
 }
 
 label {
-  display: flex;
-  flex-direction: row;
-  /*justify-content: flex-end;*/
-  /*text-align: right;*/
-  line-height: 26px;
-  margin-bottom: 43px;
-  height: 68px;
-  text-align: center;
-
+  font-size: 1.5rem;
 }
+
 /* targets text inside */
 input[type="text"] {
   text-align: auto;
   padding-left: 40px;
 }
 
-input[name="roleseeking"] {
+input[name="preferred_role"] {
   background-image:url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
   background-repeat: no-repeat;
   background-position: left center;

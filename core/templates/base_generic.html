@@ -2,6 +2,16 @@
 <html lang="en">
   <head>
     <title>Blossom: {% block title %}Find your team{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -46,6 +56,7 @@
             <li><a href="{% url 'projects' %}">Explore</a></li>
             {% if user.is_authenticated %}
             <li><a href="{% url 'user-profile' %}">Profile</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
             {% else %}
             <li><a href="{% url 'login' %}">Log In</a></li>
             <li><a href="{% url 'signup' %}">Sign Up</a></li>

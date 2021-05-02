@@ -24,8 +24,6 @@ from core import views as core_views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('about', core_views.about, name="about"),
-
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup', core_views.SignUpView.as_view(), name="signup"),
     path('accounts/profile', core_views.profile, name="user-profile"),
