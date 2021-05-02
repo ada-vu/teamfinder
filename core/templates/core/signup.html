@@ -37,7 +37,7 @@
           <div class="row">
             <div class="col">{{ form.username.label_tag }}</div>
 
-            <div class="col">{{ form.username|add_class:"form-control" }}</div>
+            <div class="col">{{ form.username|append_attr:"placeholder=Username"|add_class:"form-control" }}</div>
           </div>
         </div>
 
@@ -47,7 +47,7 @@
           <div class="row align-items-start">
             <div class="col">{{ form.password1.label_tag }}</div>
 
-            <div class="col">{{ form.password1|add_class:"form-control" }}</div>
+            <div class="col">{{ form.password1|append_attr:"placeholder=Password"|add_class:"form-control" }}</div>
           </div>
         </div>
 

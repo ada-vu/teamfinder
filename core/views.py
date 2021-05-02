@@ -13,7 +13,7 @@ def index(request):
 def about(request):
     return render(request, 'core/about.html')
 
-class SignUpView(generic.CreateView):
+class SignUpView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
     template_name = "core/signup.html"

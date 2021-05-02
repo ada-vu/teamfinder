@@ -6,46 +6,48 @@ submitted page.
 -->
 <!-- TODO: Link submit button to the hurray button!-->
 
-{% block title %}
-  Create a Posting
-{% endblock %}
-
+{% block title %} Create a Posting {% endblock %}
 {% block content %}
-
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/posting.css' %}" />
-<link
-  href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-  rel="stylesheet"
-/>
+{% load widget_tweaks %}{% load static %}
+<link rel="stylesheet" href="{% static 'css/project-form.css' %}" />
 
 <section id="title">
   <h1>Create a Post</h1>
 </section>
 <section id="inputbox">
-  <form action="linktocsscongratspage">
+  <form method="POST" action="{% url 'create-projects' %}">
     <!--
       [] add eye glass to inside search box
       [] when user makes a search or entry it gets added below
       -->
-    <label>
-      <input
-        type="text"
-        id="projectname"
-        name="projectname"
-        placeholder="Name of Project, Team or Topics if undecided"
-      /><br />
-    </label>
+    <div class="row">
+      <div class="col">{{ form.title.label_tag }}</div>
 
-    <label>
-      <input
-        type="text"
-        id="roleseeking"
-        name="roleseeking"
-        placeholder="Role Seeking"
-      /><br />
-    </label>
+      <div class="col">
+        {% render_field form.title placeholder=form.title.help_text class="py-3" %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">{{ form.preferred_role.label_tag }}</div>
 
+      <div class="col">
+        {% render_field form.preferred_role placeholder=form.preferred_role.help_text class="my-4 py-3" %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">{{ form.preferred_skills.label_tag }}</div>
+
+      <div class="col">
+        {% render_field form.preferred_skills placeholder=form.preferred_skills.help_text class="my-4 py-3" %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">{{ form.development_phase.label_tag }}</div>
+
+      <div class="col">
+        {% render_field form.development_phase placeholder=form.development_phase.help_text class="my-4 py-3" %}
+      </div>
+    </div>
     <label>
       <input
         type="text"
