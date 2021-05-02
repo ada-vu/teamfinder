@@ -141,9 +141,9 @@ input[type=text] {
   background-color:  #EDE2E2;
   border-radius: 20px;
   text-align: left;
-  padding:30px;
+  padding: 30px;
   margin-bottom: 30px;
-  
+  height: 95%
 }
 
 .box-inside-card {
