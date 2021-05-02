@@ -6,6 +6,11 @@
   font-family: Helvetica;
 }
 
+body {
+    font-family: 'Open sans', sans-serif;
+    font-size: 16px;
+}
+
 /* Navbar section */
 
 .nav {

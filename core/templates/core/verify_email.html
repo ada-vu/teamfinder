@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+<!--
+This HTML page is the page once a user is asked to verify their email after login
+-->
+<!-- TODO: make sure that once button gets clicked this page would fire-->
+
+{% block title %} Verify your email {% endblock %} {% block content %} {% load
+static %}
+<link rel="stylesheet" href="{% static 'css/logged-out.css' %}" />
+<div class="verify-email-bckg">
+  <h1>We got it! Check your email</h1>
+</div>
+{% endblock %}

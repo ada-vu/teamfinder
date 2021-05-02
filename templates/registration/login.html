@@ -20,6 +20,7 @@
 </div>
 
 <div class="main">
+<<<<<<< Updated upstream
     <div class="col-md-5"> 
         
         <div class="login-form">
@@ -52,6 +53,41 @@
 
                 <button type="submit" class="submit-button">Login</button>
             </form>
+=======
+  <div class="col-md-5">
+    <div class="login-form">
+      {% if next %} {% if user.is_authenticated %}
+      <p>Your account doesn't have access to this page.</p>
+      {% else %}
+      <p>Please login to see this page.</p>
+      {% endif %} {% endif %}
+
+      <div class="auth-label-text">Login</div>
+
+      <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col">{{ form.username.label_tag }}</div>
+
+            <div class="col">
+              {{ form.username|append_attr:"placeholder=Username"|add_class:"form-control" }}
+            </div>
+          </div>
+        </div>
+
+        <br />
+
+        <div class="form-group">
+          <div class="row align-items-start">
+            <div class="col">{{ form.password.label_tag }}</div>
+
+            <div class="col">
+                {{ form.password|append_attr:"placeholder=Password"|add_class:"form-control" }}
+            </div>
+          </div>
+>>>>>>> Stashed changes
         </div>
 
     </div>
