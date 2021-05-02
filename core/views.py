@@ -50,6 +50,8 @@ class ApplicationDetailView(generic.DetailView):
 
 class ProjectCreate(LoginRequiredMixin, CreateView):
     model = Project
+    fields = ['creator', 'title', 'members', 'description', 'preferred_role',
+              'preferred_skills', 'team_skills', 'development_phase', 'expected_end_date']
 
 class ApplicationCreate(LoginRequiredMixin, CreateView):
     model = Application
