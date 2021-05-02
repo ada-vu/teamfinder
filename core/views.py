@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views import generic
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from .models import Skill, Profile, Project, Application
 from .forms import ApplicationForm
 
@@ -12,28 +12,39 @@ from .forms import ApplicationForm
 def index(request):
     return render(request, "index.html")
 
+
 def about(request):
     return render(request, "core/about.html")
+
 
 class SignUpView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy("login")
     template_name = "core/signup.html"
 
+
 def profile(request):
     return render(request, "core/user_profile.html")
+
 
 class ProjectListView(generic.ListView):
     model = Project
     paginate_by = 9
 
+
 class ApplicationListView(generic.ListView):
     model = Application
     paginate_by = 12
 
+    def get_queryset(self):
+        return Application.objects.filter(profile__exact=Profile.objects.get(user=self.request.user),
+                                          status__exact="WA")
+
+
 class ProjectApplicationsListView(LoginRequiredMixin, generic.ListView):
     model = Application
     template_name = "core/project_application_list.html"
+    paginate_by = 12
 
     def get_queryset(self):
         project_applications = {}
@@ -51,6 +62,7 @@ class ProjectApplicationsListView(LoginRequiredMixin, generic.ListView):
 
 class ProjectDetailView(generic.DetailView):
     model = Project
+
 
 class ApplicationDetailView(generic.DetailView):
     model = Application
@@ -102,3 +114,25 @@ def create_application(request, pk, **kwargs):
         raise Http404('Project does not exist')
     
     return render(request, 'core/projects_list.html')
+
+
+def update_application(request, pk, **kwargs):
+    form = Application.objects.get(pk=pk)
+    if "AC" in request.POST:
+        form.status="AC"
+    elif "RE" in request.POST:
+        form.status="RE"
+    form.save()
+
+    return redirect('applications')
+
+# class ApplicationUpdate(UpdateView):
+#     model = Application
+#     fields = ["status"]
+
+#     def form_valid(self, form):
+#         print(self.request.POST)
+#         if "AC" in self.request.POST:
+#             print("AC")
+
+#         return super().form_valid(form)

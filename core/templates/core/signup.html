@@ -57,7 +57,7 @@
           <div class="row align-items-start">
             <div class="col">{{ form.password2.label_tag }}</div>
 
-            <div class="col">{{ form.password2|add_class:"form-control" }}</div>
+            <div class="col">{% render_field form.password2 placeholder="Confirm password" class="form-control"  %}</div>
           </div>
         </div>
 

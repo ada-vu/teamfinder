@@ -110,12 +110,23 @@ class Project(models.Model):
 
 
 class Application(models.Model):
+    ACCEPTED = "AC"
+    REJECTED = "RE"
+    WAITING = "WA"
+
+    ACCEPTANCE_CHOICES = [
+        (ACCEPTED, "Accepted"),
+        (REJECTED, "Rejected"),
+        (WAITING, "Waiting for review")
+    ]
+
     profile = models.ForeignKey("Profile", on_delete=models.CASCADE)
     project = models.ForeignKey("Project", on_delete=models.CASCADE)
     cover_letter = models.TextField(
         max_length=1500,
         blank=True,
         default="I am interested in working on this project!")
+    status = models.CharField(max_length=100, default=WAITING)
 
     class Meta:
         ordering = ['profile', 'project']

@@ -1,166 +1,55 @@
-{% extends "base_generic.html" %}
-
-{% block content %}
-
-{%load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/application-list.css' %}">
+{% extends "base_generic.html" %} {% block content %} {%load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/application-list.css' %}"
+/>
 
 <div class="container">
-    <div class="title">Projects I applied to</div>
+  <div class="title">Projects I applied to</div>
 
-    {% for application in application_list %}
-    
-    <div class="d-flex flex-row">
-        
-        <div class="card" style="width: 18rem;">
-            <img src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Ada, 19</p>
-            </div>
+  {% for application in application_list %} {{ application }}
+  {% if forloop.counter|divisibleby:4 %}
 
-            <div class="card-body">
-                <button class="accept">Accept</button>
-                <button class="reject">Reject</buttona>
-            </div>
-        </div>
+  <div class="d-flex flex-row">
+    {% endif %}
 
-        <div class="card" style="width: 18rem;">
-            <img src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Ada, 19</p>
-            </div>
+    <div class="card" style="width: 18rem">
+      <img
+        src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <p class="card-text">{{ application.profile }}, 19</p>
+      </div>
 
-            <div class="card-body">
-                <button class="accept">Accept</button>
-                <button class="reject">Reject</buttona>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Ada, 19</p>
-            </div>
-
-            <div class="card-body">
-                <button class="accept">Accept</button>
-                <button class="reject">Reject</buttona>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Ada, 19</p>
-            </div>
-
-            <div class="card-body">
-                <button class="accept">Accept</button>
-                <button class="reject">Reject</buttona>
-            </div>
-        </div>
+      <div class="card-body">
+        <form method="POST" action="{% url 'application-decision' pk=application.pk %}">
+            {% csrf_token %}
+            <input
+            type="submit"
+            class="accept"
+            name="AC"
+            value="Accept"
+            >
+            Accept
+            </input>
+            <input
+            type="submit"
+            class="reject"
+            name="RE"
+            value="Reject"
+            >
+            Reject
+            </input>
+        </form>
+      </div>
     </div>
 
-    <div class="d-flex flex-row">
-        
-        <div class="card" style="width: 18rem;">
-            <img src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Ada, 19</p>
-            </div>
-
-            <div class="card-body">
-                <button class="accept">Accept</button>
-                <button class="reject">Reject</buttona>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Ada, 19</p>
-            </div>
-
-            <div class="card-body">
-                <button class="accept">Accept</button>
-                <button class="reject">Reject</buttona>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Ada, 19</p>
-            </div>
-
-            <div class="card-body">
-                <button class="accept">Accept</button>
-                <button class="reject">Reject</buttona>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Ada, 19</p>
-            </div>
-
-            <div class="card-body">
-                <button class="accept">Accept</button>
-                <button class="reject">Reject</buttona>
-            </div>
-        </div>
-    </div>
-
-    <div class="d-flex flex-row">
-        
-        <div class="card" style="width: 18rem;">
-            <img src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Ada, 19</p>
-            </div>
-
-            <div class="card-body">
-                <button class="accept">Accept</button>
-                <button class="reject">Reject</buttona>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Ada, 19</p>
-            </div>
-
-            <div class="card-body">
-                <button class="accept">Accept</button>
-                <button class="reject">Reject</buttona>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Ada, 19</p>
-            </div>
-
-            <div class="card-body">
-                <button class="accept">Accept</button>
-                <button class="reject">Reject</buttona>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Ada, 19</p>
-            </div>
-
-            <div class="card-body">
-                <button class="accept">Accept</button>
-                <button class="reject">Reject</buttona>
-            </div>
-        </div>
-    </div>
+    {% if forloop.counter|divisibleby:4 %}
+  </div>
+  {% endif %}
+  {% endfor %}
 </div>
 {% endblock %}

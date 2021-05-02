@@ -12,4 +12,5 @@ urlpatterns = [
 
     path('applications/', views.ApplicationListView.as_view(), name="applications"),
     path('applications/<int:pk>', views.ApplicationDetailView.as_view(), name="application-detail"),
+    path('applications/decision/<int:pk>', views.update_application, name="application-decision"),
 ]
