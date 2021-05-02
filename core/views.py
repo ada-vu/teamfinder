@@ -23,8 +23,22 @@ class ProjectListView(generic.ListView):
 class ApplicationListView(generic.ListView):
     model = Application
 
-class ProjectApplicationsListView(generic.ListView):
+class ProjectApplicationsListView(LoginRequiredMixin, generic.ListView):
     model = Application
+    template_name = "core/project_application_list.html"
+
+    def get_queryset(self):
+        project_applications = {}
+        projects_queries = Project.objects.filter(creator__user=self.request.user)
+        for project in projects_queries:
+            applications = []
+            applications_queries = Application.objects.filter(project__title=project.title,
+                                                              project__creator=project.creator)
+            for application in applications_queries:
+                applications.append(application)
+            project_applications[project.title] = applications
+
+        return "Application.objects.filter"
 
 
 class ProjectDetailView(generic.DetailView):
