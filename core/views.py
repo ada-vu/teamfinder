@@ -35,7 +35,6 @@ class ProjectListView(generic.ListView):
         context = super().get_context_data()
         for project in context["project_list"]:
             project.short_desc = project.description[:130]
-            print(project.short_desc)
         return context
 
 
