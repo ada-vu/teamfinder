@@ -1,4 +1,5 @@
 import datetime
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
@@ -13,16 +14,13 @@ def index(request):
     return render(request, "index.html")
 
 
-def about(request):
-    return render(request, "core/about.html")
-
-
 class SignUpView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy("login")
     template_name = "core/signup.html"
 
 
+@login_required
 def profile(request):
     return render(request, "core/user_profile.html")
 
@@ -38,7 +36,7 @@ class ProjectListView(generic.ListView):
         return context
 
 
-class ApplicationListView(generic.ListView):
+class ApplicationListView(LoginRequiredMixin, generic.ListView):
     model = Application
     paginate_by = 12
 
@@ -70,7 +68,7 @@ class ProjectDetailView(generic.DetailView):
     model = Project
 
 
-class ApplicationDetailView(generic.DetailView):
+class ApplicationDetailView(LoginRequiredMixin, generic.DetailView):
     model = Application
 
 
@@ -86,6 +84,7 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
+@login_required
 def create_application_view(request, pk):
 
     if request.method == "POST":
@@ -114,6 +113,7 @@ def create_application_view(request, pk):
     return render(request, 'core/application_form.html', {'form': form, 'pk': pk})
 
 
+@login_required
 def create_application(request, pk, **kwargs):
     try:
         project = Project.objects.get(pk=pk)
@@ -123,6 +123,7 @@ def create_application(request, pk, **kwargs):
     return render(request, 'core/projects_list.html')
 
 
+@login_required
 def update_application(request, pk, **kwargs):
     form = Application.objects.get(pk=pk)
     if "AC" in request.POST:
