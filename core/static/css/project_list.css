@@ -27,15 +27,23 @@ input[type=text] {
   height: 68px;
 }
 
+.filter-title {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
 .grp-btn {
   float: right;
   width: 20%;
-  padding: 10px;
+  padding: 12px;
   height: 68px;
   background: rgb(247, 139, 162);
   color: white;
   border-left: none;
   border-radius: 0px 20px 20px 0px;
+  border-color: transparent;
+  font-size: 25px;
+  font-weight: 900;
 }
 
 .grp-btn:hover {
@@ -52,6 +60,7 @@ input[type=text] {
   border-radius: 20px;
   height:177.86px;
   width:285.28px;
+  margin-bottom: 30px;
 }
 .createTitle {
   font-weight: 800;
@@ -59,4 +68,112 @@ input[type=text] {
   line-height: 33px;
   padding-left: 25.28px;
   padding-top: 20px;
+}
+
+.createText {
+  padding-left: 25.28px;
+  padding-top: 20px;
+}
+
+.creatbtn {
+  width:80px;
+  height:27px;
+  margin-top: 20px;
+  margin-left:25.28px;
+  text-align: center;
+  border-radius: 10px;
+  border-color: transparent;
+  color: white;
+  background-color: #f6849c;
+}
+
+#searchLanguages {
+  border-color: transparent;
+  font-size: 25px;
+  background-color: #FBF8F8;
+  border-color: black;
+}
+
+.main {
+  margin-top: 30px;
+}
+.dropdown {
+  float: left;
+}
+.dropdown .dropbtn {
+  border-color: transparent;
+  border-radius: 10px;
+  width: 150%;
+  background-color: #eeeeee;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display:block;
+}
+
+#right-side {
+  margin-top: 20px;;
+}
+
+.card-collection {
+  margin-top:40px;
+}
+
+.card {
+  background-color:  #EDE2E2;
+  border-radius: 20px;
+  text-align: left;
+  padding:30px;
+  margin-bottom: 30px;
+  
+}
+
+.box-inside-card {
+  background-color: lightgray;
+  color: lightgray;
+}
+
+.apply {
+  background-color: #f6849c;
+  margin-top: 20px;
+  color: white;
+  border-radius: 10px;
+  border:transparent;
+  width:100px;
+}
+
+.apply:hover {
+  background-color: pink;
+  cursor: pointer;
+}
+
+.message {
+  background-color: #f6849c;
+  color: white;
+  border-radius: 10px;
+  border:transparent;
+  width:100px;
+}
+
+.message:hover {
+  background-color: pink;
+  cursor: pointer;
 }
