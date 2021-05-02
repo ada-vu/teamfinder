@@ -1,0 +1,46 @@
+.container {
+    margin-top: 150px;
+}
+
+.card {
+    margin: 20px;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+.accept {
+    background-color: #93cf8d;
+    color: white;
+    border-radius: 10px;
+    border:transparent;
+}
+
+.accept:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+.reject {
+    background-color: #cf8d8d;
+    color: white;
+    border-radius: 10px;
+    border:transparent;
+}
+
+.reject:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-text {
+    font-weight: bolder;
+}
