@@ -9,11 +9,11 @@
   <div class="title">Projects I applied to</div>
 
   {% for application in application_list %}
-  {% if forloop.counter|divisibleby:4 %}
+  {% if forloop.counter0|divisibleby:4 %}
 
   <div class="d-flex flex-row">
     {% endif %}
-
+    </div>
     <div class="card" style="width: 18rem">
       <img
         src="https://yt3.ggpht.com/ytc/AAUvwnh6Tc_omXAjKGBnrjPhqD5DiHrN-QwH-DTrLIRq=s900-c-k-c0x00ffffff-no-rj"
@@ -44,10 +44,6 @@
         </form>
       </div>
     </div>
-
-    {% if forloop.counter|divisibleby:4 %}
-  </div>
-  {% endif %}
   {% endfor %}
 </div>
 {% endblock %}

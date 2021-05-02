@@ -31,6 +31,13 @@ class ProjectListView(generic.ListView):
     model = Project
     paginate_by = 9
 
+    def get_context_data(self):
+        context = super().get_context_data()
+        for project in context["project_list"]:
+            project.short_desc = project.description[:130]
+            print(project.short_desc)
+        return context
+
 
 class ApplicationListView(generic.ListView):
     model = Application
@@ -73,6 +80,7 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
     fields = ["title", "members", "description", "preferred_role",
               "preferred_skills", "team_skills", "development_phase", "expected_end_date"]
     success_url = reverse_lazy("projects")
+    template_name = "core/project_form.html"
 
     def form_valid(self, form):
         form.instance.creator = Profile.objects.get(user=self.request.user)

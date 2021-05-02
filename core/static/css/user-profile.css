@@ -1,97 +1,97 @@
 .sidenav {
-    height: 100%;
-    background-color: #f6efef;
-    overflow-x: hidden;
-    padding-top: 20px;
+  height: 100%;
+  background-color: #f6efef;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
 .container.main {
-    padding: 0px 10px;
+  padding: 0px 10px;
+  width: 70%;
 }
-  
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-}
-  
-@media screen and (min-width: 768px) {
-    .container.main {
-        margin-left: 30%;
-    }
 
-    .sidenav {
-        width: 30%;
-        position: fixed;
-        z-index: 1000;
-        top: 0;
-        left: 0;
-    }
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container.main {
+    margin-left: 30%;
+  }
+
+  .sidenav {
+    width: 30%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+  }
 }
 
 .quick-links {
-    margin-top: 120px;
-    margin-left: 100px;
-    margin-bottom: 50px;
-    color: grey;
-    font-weight: 900;
-    font-size: 40px;
-    text-align: left;
+  margin-top: 120px;
+  margin-left: 100px;
+  margin-bottom: 50px;
+  color: grey;
+  font-weight: 900;
+  font-size: 40px;
+  text-align: left;
 }
 
 #your-profile {
-    font-size: 70px;
-    font-weight: 900;
+  font-size: 70px;
+  font-weight: 900;
 }
 
 #edit-profile {
-    color: gray;
+  color: gray;
 }
 
 .links {
-    padding:20px;
-    margin-left: 100px;
-    color: gray;
-    font-weight: 500;
-    font-size: 30px;
-    text-align: left;
+  padding: 20px;
+  margin-left: 100px;
+  color: gray;
+  font-weight: 500;
+  font-size: 30px;
+  text-align: left;
 }
 
 .profile-pic {
-    height: 200px;
-    width: 200px;
-    background-color: #deefff;
-    border-radius: 50%;
-    margin-top: 30px;
+  height: 200px;
+  width: 200px;
+  background-color: #deefff;
+  border-radius: 50%;
+  margin-top: 30px;
 }
 
 #name {
-    margin-top: 50px;
-    font-size: 50px;
+  margin-top: 50px;
+  font-size: 50px;
 }
 
 #profile-des {
-    margin-top: 20px;
-    font-size: 20px;
-    color: gray;
+  margin-top: 20px;
+  font-size: 20px;
+  color: gray;
 }
 
 #headings {
-    margin-top: 50px;
-    font-size: 20px;
-    color: darkslategray;
+  margin-top: 50px;
+  font-size: 20px;
+  color: darkslategray;
 }
 
 .about-des {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .card {
-    margin-top:10px;
-    border-radius: 10px;
-    width: 200px;
-    padding:10px;
-    margin-right: 10px;
-    text-align: center;
+  margin-top: 10px;
+  border-radius: 10px;
+  width: 200px;
+  padding: 10px;
+  margin-right: 10px;
+  text-align: center;
 }
-
