@@ -1,11 +1,21 @@
+<!--
+  This is the HTML file for the explore projects page,
+  the cards are in row and column form to
+  obtain correct spacing.
+-->
 {% extends "base_generic.html" %}
 
 {% block content %}
+
+{%load static %}
+<link rel="stylesheet" href="{% static 'css/project_list.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <h1>Welcome to Explore Projects</h1>
 <!--Section for the search Box-->
 <!--TODO: Add magnifying glass to side
-[ ]when search goes through add ?
-[ ]Make search box wider and round corners
+[ ]if time permits make the box wider
+[ X ]Make search box wider and round corners
 -->
 <!-- Placement for search box-->
   <section id="searchBox">
@@ -16,6 +26,9 @@
         name="searchLanguages"
         placeholder="Keywords">
       </input>
+      <button class="grp-btn">
+        <p>Find Group</p>
+      </button>
     </label>
   </section>
     <!--TODO: Make the background
@@ -27,9 +40,9 @@
       <div class="createTitle">
       Create a Post
       </div>
-      Create a posting to look
+      <p>Create a posting to look
       for a teammate and
-      start that project!
+      start that project!</p>
       <div id="createButton">
       <input type="button" value="Create"/>
       </div>
