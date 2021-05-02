@@ -1,113 +1,97 @@
 body {
-    font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
-.main-head{
-    height: 150px;
-    background: #FFF;
+.main-head {
+  height: 150px;
+  background: #fff;
 }
 
 .form-control {
-    width: 240%;
-    border-radius: 70px;
-    background-color: #F7EFEF;
+  width: 240%;
+  border-radius: 70px;
+  background-color: #f7efef;
 }
 
-.login-text {
-    font-size: 70px;
-    margin-bottom:70px;
-    width: fit-content;
+.auth-label-text {
+  font-size: 70px;
+  margin-bottom: 70px;
+  width: fit-content;
 }
 
 .sidenav {
-    height: 100%;
-    background-color: #F6EFEF;
-    overflow-x: hidden;
-    padding-top: 20px;
+  height: 100%;
+  background-color: #f6efef;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
 .main {
-    padding: 0px 10px;
+  padding: 0px 10px;
 }
 
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
+  .sidenav {
+    padding-top: 15px;
+  }
 }
 
-@media screen and (max-width: 450px) {
-    .login-form{
-        margin-top: 10%;
-    }
+@media screen and (min-width: 768px) {
+  .main {
+    margin-left: 45%;
+  }
 
-    .register-form{
-        margin-top: 10%;
-    }
+  .sidenav {
+    width: 40%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+  }
 }
 
-@media screen and (min-width: 768px){
-    .main{
-        margin-left: 45%; 
-    }
-
-    .sidenav{
-        width: 40%;
-        position: fixed;
-        z-index: 1000;
-        top: 0;
-        left: 0;
-    }
-
-    .login-form{
-        margin-top: 80%;
-    }
-
-    .register-form{
-        margin-top: 20%;
-    }
+.login-main-text {
+  margin-top: 2%;
+  padding: 60px;
+  color: #000;
+  position: center;
+  font-family: Verdana (sans-serif);
 }
 
-.login-main-text{
-    margin-top: 2%;
-    padding: 60px;
-    color: #000;
-    position: center;
-    font-family: Verdana (sans-serif);
+.login-main-text h2 {
+  font-weight: 350;
+  font-size: 80px;
 }
 
-.login-main-text h2{
-    font-weight: 350;
-    font-size: 80px;
-}
-
-.btn-black{
-    background-color: #000 !important;
-    color: #fff;
+.btn-black {
+  background-color: #000 !important;
+  color: #fff;
 }
 
 .center {
-    margin: auto;
-    width:auto; 
-    padding: 10px; 
-    height: 120px;
-    z-index: -1;
-    left:125px;
-    background-color: #f893aa;
-    border-radius: 70px;
-    text-align: center;
+  margin: auto;
+  width: auto;
+  padding: 10px;
+  height: 120px;
+  z-index: -1;
+  left: 125px;
+  background-color: #f893aa;
+  border-radius: 70px;
+  text-align: center;
 }
 
 .submit-button {
-    margin-top: 20%;
-    left: 50px;
-    background-color: #f893aa;
-    border-radius: 70px;
-    width: 50%;
-    color: white;
-    position: relative;
-    margin-left: 100%;
+  margin-top: 20%;
+  left: 50px;
+  background-color: #f893aa;
+  border-radius: 70px;
+  width: 50%;
+  color: white;
+  position: relative;
+  margin-left: 100%;
 }
 
 .submit-button:hover {
-    background-color: pink;
-    cursor: pointer;
+  background-color: pink;
+  cursor: pointer;
 }
