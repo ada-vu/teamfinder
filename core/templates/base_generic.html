@@ -25,12 +25,19 @@
       type="text/css"
       href="{% static 'css/base-generic.css' %}"
     />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{% static 'images/petal.ico' %}"
+    />
   </head>
   <body>
     <nav class="nav">
-      <div class="col-10 m-auto">
+      <div class="col-11 m-auto">
         <div class="logo">
-          <a href="#">HelloKitty</a>
+          <a href="{% url 'index' %}">
+            <img class="logo" src="{% static 'images/Logo.png' %}" />
+          </a>
         </div>
         <div class="main_list" id="mainListDiv">
           <ul>

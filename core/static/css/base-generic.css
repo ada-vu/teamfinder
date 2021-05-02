@@ -134,6 +134,10 @@
   transform: rotate3d(0, 0, 1, -20deg);
 }
 
+.logo {
+  height: 60px;
+}
+
 /* Home section */
 
 .home {
