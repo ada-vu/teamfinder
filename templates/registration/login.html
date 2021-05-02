@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base_generic.html" %}
 
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+{% block content %}
 <meta name="google-signin-client_id" content="207011433677-q1rgc6epl3uuuhivibjvlam0vv0fk6o8.apps.googleusercontent.com">
 
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 
-</head>
-<body>
 <div class="sidenav">
     <div class="login-main-text">
         <h2 class="center">Hello Kitty</h2>
@@ -61,4 +54,6 @@
 
     </div>
 </div>
-</body>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+{% endblock %}
