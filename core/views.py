@@ -59,3 +59,6 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
 
 class ApplicationCreate(LoginRequiredMixin, CreateView):
     model = Application
+
+def Group(request):
+    return render(request,'core/group_detail.html')

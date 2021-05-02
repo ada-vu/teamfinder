@@ -12,4 +12,5 @@ urlpatterns = [
     path('applications/apply/', views.ApplicationCreate.as_view(), name="create-applications"),
     path('applications/', views.ApplicationListView.as_view(), name="applications"),
     path('applications/<int:pk>/', views.ApplicationDetailView.as_view(), name="application-detail"),
+    path('applications/groupdtl', views.Group, name="group-detail")
 ]
