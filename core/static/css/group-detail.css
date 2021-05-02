@@ -1,0 +1,25 @@
+/*
+CSS file for group_detail.html
+*/
+
+h1 {
+font-weight: 800;
+font-size: 64px;
+line-height: 87px;
+display: flex;
+align-items: center;
+text-align: center;
+
+}
+
+.action-btns {
+  color: white;
+  border-radius: 76px;
+  float: right;
+  height: 68px;
+}
+
+.action-btns .action-btns {
+  background-color: #FF6F8E;;
+}
+
