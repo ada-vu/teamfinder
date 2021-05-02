@@ -50,7 +50,7 @@ class Profile(models.Model):
         return reverse('user-profile', args=[str(self.id)])
 
     def __str__(self):
-        return self.user.get_full_name()
+        return self.user.get_full_name() if self.user.get_full_name() != "" else self.user.get_username()
 
 
 class Project(models.Model):
@@ -69,17 +69,17 @@ class Project(models.Model):
     ]
 
     creator = models.ForeignKey("Profile", related_name="+", on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
+    title = models.CharField(
+        max_length=200,
+        help_text="Name of Project, Team or Topics if undecided")
     created_date = models.DateTimeField(auto_now_add=True)
-    members = models.ManyToManyField(
-        "Profile",
-        blank=True,
-        related_name="+",
-        help_text="Add your team members to this project")
+    members = models.PositiveSmallIntegerField(default=1,
+        help_text="The number of teammates on your project, including yourself")
     description = models.TextField(
         max_length=2500,
         help_text="Talk about how exciting your project is and what it entails!")
-    preferred_role = models.CharField(max_length=100)
+    preferred_role = models.CharField(max_length=100,
+        help_text="Preferred applicant's role")
     preferred_skills = models.ManyToManyField(
         "Skill",
         blank=True,

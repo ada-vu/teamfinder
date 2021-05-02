@@ -7,9 +7,11 @@ admin.site.register(Skill)
 
 class ProjectInline(admin.TabularInline):
     model = Project
+    extra = 0
 
 class ApplicationInline(admin.TabularInline):
     model = Application
+    extra = 0
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):

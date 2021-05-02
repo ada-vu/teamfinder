@@ -1,84 +1,95 @@
-<!DOCTYPE html>
-<html>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base_generic.html" %} {% block content %}
 
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-client_id" content="207011433677-q1rgc6epl3uuuhivibjvlam0vv0fk6o8.apps.googleusercontent.com">
+<meta
+  name="google-signin-client_id"
+  content="207011433677-q1rgc6epl3uuuhivibjvlam0vv0fk6o8.apps.googleusercontent.com"
+/>
 
-</head>
-
-{%load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+{% load widget_tweaks %} {%load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}" />
 
 <div class="sidenav">
-    <div class="login-main-text">
-        <h2 class="center">Hello Kitty</h2>
-    </div>
+  <div class="login-main-text text-center">
+    <a href="{% url 'index' %}">
+      <img class="center px-5" src="{% static 'images/Logo.png' %}" />
+    </a>
+  </div>
 
-    <!-- image for login on the left -->
-    <div>
-        <img >
-    </div>
+  <!-- image for login on the left -->
+  <div>
+    <img />
+  </div>
 </div>
 
 <div class="main">
-    <div class="col-md-7 col-sm-5"> 
-        
-        <div class="login-form">
-            <div class="login-text">Register</div>
+  <div class="col-md-5">
+    <div class="register-form">
+      {% if next %} {% if user.is_authenticated %}
+      <p>Your account doesn't have access to this page.</p>
+      {% else %}
+      <p>Please login to see this page.</p>
+      {% endif %} {% endif %}
+      <div class="auth-label-text">Register</div>
 
-            <form method="POST">
-                
-                <div class="form-group">
-                    <div class="row ">
-                        <div class="col">Username</div>
+      <form method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <div class="row">
+            <div class="col">{{ form.username.label_tag }}</div>
 
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Username">
-                        </div>
-                    </div>
-                    
-                </div>
+            <div class="col">{{ form.username|append_attr:"placeholder=Username"|add_class:"form-control" }}</div>
+          </div>
+        </div>
 
-                <br>
+        <br />
 
-                <div class="form-group">
-                    <div class="row align-items-start">
-                        <div class="col">Password</div>
+        <div class="form-group">
+          <div class="row align-items-start">
+            <div class="col">{{ form.password1.label_tag }}</div>
 
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Password">
-                        </div>
-                    </div>
-                </div>
+            <div class="col">{{ form.password1|append_attr:"placeholder=Password"|add_class:"form-control" }}</div>
+          </div>
+        </div>
 
-                <br>
+        <br />
 
-                <div class="signup-with">
-                    <div class="row align-items-start">
+        <div class="form-group">
+          <div class="row align-items-start">
+            <div class="col">{{ form.password2.label_tag }}</div>
 
-                        <div class="col-4">
-                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                        </div>
+            <div class="col">{{ form.password2|add_class:"form-control" }}</div>
+          </div>
+        </div>
 
-                        <!-- add other platforms -->
-                        <!-- <div class="col-4 icons">
+        <br />
+
+        <div class="signup-with">
+          <div class="row align-items-start">
+            <div class="col-4">
+              <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            </div>
+
+            <!-- add other platforms -->
+            <!-- <div class="col-4 icons">
                             <img class="icons" src="../../static/images/facebook-logo.png">
                         </div>
 
                         <div class="col-4 icons">
                             <img class="icons" src="../../static/images/github-logo.svg">
                         </div> -->
-
-                    </div>
-                </div>
-
-                <button type="submit" class="submit-button">Register</button>
-            </form>
+          </div>
         </div>
 
+        {% if form.errors %}
+        <p class="text-danger">{{ form.errors }} Please try again.</p>
+        {% endif %}
+
+        <button type="submit" class="submit-button">Register</button>
+      </form>
     </div>
+  </div>
 </div>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+{% endblock %}
