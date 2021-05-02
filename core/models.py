@@ -50,7 +50,7 @@ class Profile(models.Model):
         return reverse('user-profile', args=[str(self.id)])
 
     def __str__(self):
-        return self.user.get_full_name()
+        return self.user.get_full_name() if self.user.get_full_name() != "" else self.user.get_username()
 
 
 class Project(models.Model):
