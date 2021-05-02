@@ -7,3 +7,22 @@ header {
 body {
     background-color: #F6EFEF;
 }
+/* adds background image and color for please check your email page */
+.verify-email-bckg {
+    background-image: url(core/images/mailing.png);
+    background-repeat: no-repeat;
+    background-color: #E6FAFF;
+}
+
+/* header custom for verify_email page */
+.verify-email-bckg .h1 {
+    position: absolute;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 68px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #150000;
+    padding-top: 684px;
+}

@@ -1,0 +1,62 @@
+h1 {
+  font-size: 30px;
+  line-height: 41px;
+  text-align: center;
+}
+
+
+h1, .grp-button {
+font-weight: 800;
+
+}
+input[type=text], .grp-button  {
+  height: 68px;
+  font-size: 20px;
+}
+* {
+  box-sizing: border-box;
+}
+
+input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border-radius:20px 0px 0px 20px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+  height: 68px;
+}
+
+.grp-btn {
+  float: right;
+  width: 20%;
+  padding: 10px;
+  height: 68px;
+  background: rgb(247, 139, 162);
+  color: white;
+  border-left: none;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.grp-btn:hover {
+  background: #FF6F8E;
+}
+
+.grp-btn::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.createPostBox {
+  background-color: #EDE2E2;
+  border-radius: 20px;
+  height:177.86px;
+  width:285.28px;
+}
+.createTitle {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  padding-left: 25.28px;
+  padding-top: 20px;
+}
