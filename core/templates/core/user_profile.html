@@ -1,21 +1,101 @@
 {% extends "base_generic.html" %}
 
-{% block title %}
-    Your Profile
-{% endblock %}
-
 {% block content %}
 
-{% load static %}
-<link href="{% static 'css/user_profile.css'%}" rel="stylesheet">
+{% load widget_tweaks %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/user-profile.css' %}" />
 
-<header>
-    <h1>Your Profile</h1>
-</header>
+<div class="sidenav">
+    <a><div class="quick-links">
+        Quick Links
+    </div></a>
 
-<body>
-        <img src="{% static 'images/profile-placeholder.png' %}"  alt="placeholder"; max-width: 100%;
-        height: auto;>
-</body>
+    <a href="{% url 'applications' %}"><div class="links">
+        Listings Applied to
+    </div></a>
+
+    <a><div class="links">
+        Edit Listing
+    </div></a>
+
+    <a href="{% url 'project-applications' %}"><div class="links">
+        Users who have applied to listing
+    </div></a>
+</div>
+
+<div class="container main">
+    <div class="row"> 
+        <div id="your-profile" class="col-10">
+            Your Profile
+        </div>
+        <div class="col-2">
+            <a id="edit-profile" href="#">Edit Profile</a>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <img class="profile-pic" src="https://lh3.googleusercontent.com/proxy/rXRwi-atriD1cIc53WadwdRUcTXLK62vnjL7PrU729iEFiydZoPpS91CRCVuW_aEkgUi_qoeX-N8ARjatGKU8OTWrUUWZMj_OB72MPw390tzNKubTh5adPo">
+        </div>
+
+        <div id="name" class="col-9">
+            Ada Vu
+            <div id="profile-des">
+                Frontend Developer
+            </div>
+        </div>
+    </div>
+
+    <div id="headings">About</div>
+
+    <div class="about-des">Hello, I'm Ada, a student at the University of Waterloo studying Computing and Financial Management. In high
+        school, I took both computer science and accounting and enjoyed both subjects, for the most part. Thus, why
+        I am in the program that I am in. During my years in high school, I took part in side projects and extracurriculars that dealt with my program. I created some mobile game apps in Swift for iOS
+        which I have showcased below. I also participated in Google Code-In which is a programming competition directed
+        for high school students to be exposed to open source. Aside from computer projects, I also took part in
+        finance extracurriculars. I went to a Women in Capital Markets conference where they expose female high school
+        students about careers in STEM and Business. At the moment, I have no direct route of what I want to do. During university, I hope to experiment more through
+        co-op and other extracurriculars.
+    </div>
+
+    <div class="row">
+        <div id="headings" class="col-4">
+            Github
+            <a href="https://github.com/ada-vu"><div class="socials">
+                ada-vu
+            </div></a>
+        </div>
+        <div id="headings" class="col-8">
+            Linkedin
+            <a href="https://www.linkedin.com/in/ada-vu/"><div class="socials">
+                ada-vu
+            </div></a>
+        </div>
+
+    </div>
+
+    <div id="headings">Skills</div>
+
+    <div class="row">
+        <div class="card">
+            iOS
+        </div>
+        <div class="card">
+            Web Development
+        </div>
+        <div class="card">
+            C++
+        </div>
+    </div>
+
+    <div id="headings">Education</div>
+
+    <div class="about-des">University of Waterloo, 2019-2024</div>
+</div>
+
+<br>
+
+
 
 {% endblock %}
