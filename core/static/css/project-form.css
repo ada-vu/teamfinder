@@ -1,5 +1,6 @@
 /*
-CSS File for group_form.html
+CSS File for group_form.html, group_form_dont.html and
+verify_email.html
 */
 h1 {
 font-weight: 1000px;
@@ -10,6 +11,21 @@ display: flex;
 align-items: center;
 text-align: center;
 
+}
+
+#mainHeading h1{
+position: absolute;
+width: 944px;
+height: 138px;
+left: 533px;
+top: 443px;
+font-weight: 800;
+font-size: 50px;
+line-height: 68px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #000000;
 }
 
 label {
