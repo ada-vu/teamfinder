@@ -1,5 +1,21 @@
 {% extends "base_generic.html" %}
 
+{% block title %}
+    Your Profile
+{% endblock %}
+
 {% block content %}
-<h1>Welcome to Profile</h1>
+
+{% load static %}
+<link href="{% static 'css/user_profile.css'%}" rel="stylesheet">
+
+<header>
+    <h1>Your Profile</h1>
+</header>
+
+<body>
+        <img src="{% static 'images/profile-placeholder.png' %}"  alt="placeholder"; max-width: 100%;
+        height: auto;>
+</body>
+
 {% endblock %}
