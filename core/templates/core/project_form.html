@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-
+{% extends "base_generic.html" %}
 <!--
 This is the HTML page when creating a posting
 for finding a teammate. The <form action> leads to hooray
@@ -7,6 +6,7 @@ submitted page.
 -->
 <!-- TODO: Link submit button to the hurray button!-->
 
+<<<<<<< HEAD
 <html lang="eng">
   <head>
     <meta charset="UTF-8"/>
@@ -25,30 +25,72 @@ submitted page.
       <label>
         <input type="text" id="projectname" name="projectname" placeholder="Name of Project, Team or Topics if undecided"/><br>
       </label>
+=======
+{% block title %}
+  Create a Posting
+{% endblock %}
 
-      <label>
-        <input type="text" id="roleseeking" name="roleseeking" placeholder="Role Seeking"/><br>
-      </label>
+{% block content %}
 
-      <label>
-        <input type="text" id="skillspreferred" name="skillspreferred" placeholder="Skills Preferred"/><br>
-      </label>
-      <div class="dropdown">
-        <button class="phase-btn">Select Phase of Project</button>
-        <div class="dropdown-content">
-          <a href="#ideation">Ideation</a>
-          <a href="#planning">Planning</a>
-          <a href="#design">Design</a>
-          <a href="#develop">Develop</a>
-          <a href="#deploy">Deploy</a>
-        </div>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/posting.css' %}" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+  rel="stylesheet"
+/>
+
+<section id="title">
+  <h1>Create a Post</h1>
+</section>
+<section id="inputbox">
+  <form action="linktocsscongratspage">
+    <!--
+      [] add eye glass to inside search box
+      [] when user makes a search or entry it gets added below
+      -->
+    <label>
+      <input
+        type="text"
+        id="projectname"
+        name="projectname"
+        placeholder="Name of Project, Team or Topics if undecided"
+      /><br />
+    </label>
+>>>>>>> dcb514133f31fe8e3e716bab728c8fd4aa0107a3
+
+    <label>
+      <input
+        type="text"
+        id="roleseeking"
+        name="roleseeking"
+        placeholder="Role Seeking"
+      /><br />
+    </label>
+
+    <label>
+      <input
+        type="text"
+        id="skillspreferred"
+        name="skillspreferred"
+        placeholder="Skills Preferred"
+      /><br />
+    </label>
+    <div class="dropdown">
+      <button class="phase-btn">Select Phase of Project</button>
+      <div class="dropdown-content">
+        <a href="#ideation">Ideation</a>
+        <a href="#planning">Planning</a>
+        <a href="#design">Design</a>
+        <a href="#develop">Develop</a>
+        <a href="#deploy">Deploy</a>
       </div>
-      <div class="create-button">
-        <div class="button">
+    </div>
+    <div class="create-button">
+      <div class="button">
         <button class="button">Create</button>
       </div>
-      </div>
-      </form>
-    </section>
-  </body>
-</html>
+    </div>
+  </form>
+</section>
+
+{% endblock %}

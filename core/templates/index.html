@@ -1,0 +1,133 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{%load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
+
+<div class="container">
+    <div class="row"> 
+        <div class="col-6">
+            <div class="embed-responsive embed-responsive-4by3">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pRJ-Dai3oB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <h1 class="title"><b></b>Hello Kitty</b></h1>
+            <h6 class="sub-title">Made for students by students!</h6>
+            <button class="explore-button">Explore Now</button> 
+            <button class="explore-button">Learn More</button> 
+        </div>
+
+    </div>
+
+    <h3 class="about">About</h3>
+
+    <h6 class="about-description">A short description that sounds more than a description</h6>
+
+    <div id="about-cards" class="row">
+        <div class="card" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Special title treatment</b></h5>
+                <div class="row">
+                    <div class="col-8">
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div id="numbers" class="col-4">
+                        <p>1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Special title treatment</b></h5>
+                <div class="row">
+                    <div class="col-8">
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div id="numbers" class="col-4">
+                        <p>2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Special title treatment</b></h5>
+                <div class="row">
+                    <div class="col-8">
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div id="numbers" class="col-4">
+                        <p>3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Special title treatment</b></h5>
+                <div class="row">
+                    <div class="col-8">
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div id="numbers" class="col-4">
+                        <p>4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h3 class="about">Meet The Team!</h3>
+
+    <div id="cards" class="row">
+        <div class="team-card" style="width: 16rem;">
+            <img src="https://japantoday-asset.scdn3.secure.raxcdn.com/img/store/a3/8c/b5543a303fa1f02d1dfe2733f0ff748e5c59/KM-1/_w850.jpg" class="profile-pic">
+            <h5 class="name">Tung</h5>
+            <h8 class="pronouns">He/Him</h8>
+            <p class="description">Role: Backend <br> Language used: Python, Django</p>
+            <div class="job"><h3 class="mb-0">Psychology</h3></div>
+        </div>
+
+        <div class="team-card" style="width: 16rem;">
+            <img src="https://japantoday-asset.scdn3.secure.raxcdn.com/img/store/a3/8c/b5543a303fa1f02d1dfe2733f0ff748e5c59/KM-1/_w850.jpg" class="profile-pic">
+            <h5 class="name">Chuc</h5>
+            <h8 class="pronouns">She/Her</h8>
+            <p class="description">Role: Frontend, Designer <br> Language used: HTML, CSS</p>
+            <div class="job"><h3 class="mb-0">Biology, Psychology</h3></div>
+        </div>
+
+        <div class="team-card" style="width: 16rem;">
+            <img src="https://japantoday-asset.scdn3.secure.raxcdn.com/img/store/a3/8c/b5543a303fa1f02d1dfe2733f0ff748e5c59/KM-1/_w850.jpg" class="profile-pic">
+            <h5 class="name">Liz</h5>
+            <h8 class="pronouns">She/Her</h8>
+            <p class="description">Role: Frontend, Designer <br> Language used: HTML, CSS</p>
+            <div class="job"><h3 class="mb-0">Geography</h3></div>
+        </div>
+
+        <div class="team-card" style="width: 16rem;">
+            <img src="https://japantoday-asset.scdn3.secure.raxcdn.com/img/store/a3/8c/b5543a303fa1f02d1dfe2733f0ff748e5c59/KM-1/_w850.jpg" class="profile-pic">
+            <h5 class="name">Ada</h5>
+            <h8 class="pronouns">She/Her</h8>
+            <p class="description">Role: Frontend <br> Language used: HTML, CSS</p>
+            <div class="job"><h3 class="mb-0">Computer Science</h3></div>
+        </div>
+
+    </div>
+</div>
+
+<br>
+
+<br>
+<br>
+<br>
+
+
+
+{% endblock %}
