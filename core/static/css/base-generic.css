@@ -15,6 +15,7 @@
   line-height: 65px;
   text-align: center;
   background-color: #f6efef;
+  z-index: 100;
 }
 
 .nav div.logo {

@@ -32,6 +32,7 @@
     />
   </head>
   <body>
+    {% block nav %}
     <nav class="nav">
       <div class="col-11 m-auto">
         <div class="logo">
@@ -40,12 +41,10 @@
           </a>
         </div>
         <div class="main_list" id="mainListDiv">
-          <ul>
+          <ul class="justify-content-center">
             <li><a href="{% url 'index' %}">Homepage</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'projects' %}">Explore</a></li>
             {% if user.is_authenticated %}
-            <li><a href="{% url 'index' %}">Dashboard</a></li>
             <li><a href="{% url 'user-profile' %}">Profile</a></li>
             {% else %}
             <li><a href="{% url 'login' %}">Log In</a></li>
@@ -55,6 +54,7 @@
         </div>
       </div>
     </nav>
+    {% endblock %}
     <div class="pt-5"></div>
     <div class="body-content">{% block content %} {% endblock %}</div>
   </body>
