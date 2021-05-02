@@ -8,7 +8,7 @@
 <div class="container">
   <div class="title">Projects I applied to</div>
 
-  {% for application in application_list %} {{ application }}
+  {% for application in application_list %}
   {% if forloop.counter|divisibleby:4 %}
 
   <div class="d-flex flex-row">
@@ -33,7 +33,6 @@
             name="AC"
             value="Accept"
             >
-            Accept
             </input>
             <input
             type="submit"
@@ -41,7 +40,6 @@
             name="RE"
             value="Reject"
             >
-            Reject
             </input>
         </form>
       </div>
