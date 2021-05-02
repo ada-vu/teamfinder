@@ -1,5 +1,20 @@
-{% extends "base_generic.html" %}
+{% extends "base_generic.html" %} 
 
 {% block content %}
 <h1>Welcome to Application form for a project</h1>
+
+{% load static %}
+<form method="POST" action="{% url 'create-applications' pk %}">
+  {% csrf_token%} 
+  
+  {{ form.cover_letter }}
+
+  {{ form.errors }}
+
+  <div class="apply-button">
+    <div class="button">
+      <input type="submit" class="submit-button" value="Apply" />
+    </div>
+  </div>
+</form>
 {% endblock %}
