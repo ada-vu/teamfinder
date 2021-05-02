@@ -1,331 +1,399 @@
+<!--
+  This is the HTML file for the explore projects page,
+  the cards are in row and column form to
+  obtain correct spacing.
+-->
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>Welcome to Explore Projects</h1>
+
+{%load static %}
+<link rel="stylesheet" href="{% static 'css/project_list.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <!--Section for the search Box-->
 <!--TODO: Add magnifying glass to side
-[ ]when search goes through add ?
-[ ]Make search box wider and round corners
+[ ]if time permits make the box wider
+[ X ]Make search box wider and round corners
 -->
 <!-- Placement for search box-->
-  <section id="searchBox">
-    <label>
+<div class="container-fluid">
+  <div class="row">
       <input
         type="text"
         id="searchLanguages"
         name="searchLanguages"
         placeholder="Keywords">
       </input>
-    </label>
-  </section>
+      <button class="grp-btn">
+        <p>Find a Group</p>
+      </button>
+  </div>
+</div>  
     <!--TODO: Make the background
     []EDE2E2
     [] make the pink create button
     -->
-<!-- placement for create a post box and button-->
-  <div class="createPostBox">
-      <div class="createTitle">
-      Create a Post
+<div class="main container-fluid">
+  
+  <div class="row">
+    <div id="left-side" class="col-4">
+      <!-- placement for create a post box and button-->
+      <div class="createPostBox">
+          <div class="createTitle">
+          Create a Post
+          </div>
+          <div class="createText">
+            Create a posting to look
+          for a teammate and
+          start that project!</div>
+            
+            <a href="{% url 'create-projects' %}"><button class="creatbtn">Create</button></a>
       </div>
-      Create a posting to look
-      for a teammate and
-      start that project!
-      <div id="createButton">
-      <input type="button" value="Create"/>
-      </div>
-  </div>
-  <!--TODO: Insert find group
-    button on the right side of search bar-->
 
-<!-- Add title here + SortBy Menu -->
-  <!--TODO:
-  [ ] Display inline block
-  [ ] and make font bold
-  -->
-    <h2>Displaying 30 Listings</h2>
-    <!-- SortBy menu TODO: Make sure its at align block -->
-    <div class="dropdownSort">
-      <a href="#Featured">Featured</a>
-      <a href="#Date, old to new">Date, old to new</a>
-      <a href="#Date, new to old">Date, new to old</a>
-    </div>
-<!-- One Filter Box -->
-    <div class="filter-container">
-      <h3>Phase of Project</h3>
-       <!-- only one choice in filter box-->
-      <div class="choices">
-        <input type="checkbox" id="Ideation">
-        <label for="Ideation">Ideation</label>
+      <div class="filter-container">
+        <h3 class="filter-title">Phase of Project</h3>
+         <!-- only one choice in filter box-->
+        <div class="choices">
+          <input type="checkbox" id="Ideation">
+          <label for="Ideation">Ideation</label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="Planning">
+          <label for="Planning">Planning</label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="Design">
+          <label for="Design">Design</label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="Develop">
+          <label for="Develop">Develop</label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="Deployment">
+          <label for="Deployment">Deployment</label>
+        </div>
       </div>
-      <div class="choices">
-        <input type="checkbox" id="Planning">
-        <label for="Planning">Planning</label>
+      <!-- One Filter Box -->
+      <div class="filter-container">
+        <h3 class="filter-title">Skills Preferred</h3>
+         <!-- only one choice in filter box-->
+        <div class="choices">
+          <input type="checkbox" id="Python">
+          <label for="Python">Python</label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="Java">
+          <label for="Java">Java</label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="Go">
+          <label for="Go">Go</label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="JavaScript">
+          <label for="JavaScript">JavaScript</label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="C++">
+          <label for="C++">C++</label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="SQL">
+          <label for="SQL">SQL</label>
+        </div>
       </div>
-      <div class="choices">
-        <input type="checkbox" id="Design">
-        <label for="Design">Design</label>
+      <!-- One Filter Box -->
+      <div class="filter-container">
+        <h3 class="filter-title">Interview Required</h3>
+         <!-- only one choice in filter box-->
+        <div class="choices">
+          <input type="checkbox" id="yes">
+          <label for="yes">Yes</label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="No">
+          <label for="No">No</label>
+        </div>
       </div>
-      <div class="choices">
-        <input type="checkbox" id="Develop">
-        <label for="Develop">Develop</label>
-      </div>
-      <div class="choices">
-        <input type="checkbox" id="Deployment">
-        <label for="Deployment">Deployment</label>
-      </div>
-    </div>
-    <!-- One Filter Box -->
-    <div class="filter-container">
-      <h3>Skills Preferred</h3>
-       <!-- only one choice in filter box-->
-      <div class="choices">
-        <input type="checkbox" id="Python">
-        <label for="Python">Python</label>
-      </div>
-      <div class="choices">
-        <input type="checkbox" id="Java">
-        <label for="Java">Java</label>
-      </div>
-      <div class="choices">
-        <input type="checkbox" id="Go">
-        <label for="Go">Go</label>
-      </div>
-      <div class="choices">
-        <input type="checkbox" id="JavaScript">
-        <label for="JavaScript">JavaScript</label>
-      </div>
-      <div class="choices">
-        <input type="checkbox" id="C++">
-        <label for="C++">C++</label>
-      </div>
-      <div class="choices">
-        <input type="checkbox" id="SQL">
-        <label for="SQL">SQL</label>
-      </div>
-    </div>
-    <!-- One Filter Box -->
-    <div class="filter-container">
-      <h3>Interview Required</h3>
-       <!-- only one choice in filter box-->
-      <div class="choices">
-        <input type="checkbox" id="yes">
-        <label for="yes">Yes</label>
-      </div>
-      <div class="choices">
-        <input type="checkbox" id="No">
-        <label for="No">No</label>
-      </div>
-    </div>
-    <!-- One Filter Box -->
-    <div class="filter-container">
-      <h3>Time Commitment</h3>
-       <!-- only one choice in filter box-->
-      <div class="choices">
-        <input type="checkbox" id="Unsure">
-        <label for="Unsure">Unsure</label>
-      </div>
-      <div class="choices">
-        <input type="checkbox" id="One-Week">
-        <label for="One-Week">One Week ></label>
-      </div>
-      <div class="choices">
-        <input type="checkbox" id="One-Month">
-        <label for="One-Month">One Month ></label>
-      </div>
-      <div class="choices">
-        <input type="checkbox" id="OneMonthMore">
-        <label for="OneMonthMore">One Month+</label>
+      <!-- One Filter Box -->
+      <div class="filter-container">
+        <h3 class="filter-title">Time Commitment</h3>
+         <!-- only one choice in filter box-->
+        <div class="choices">
+          <input type="checkbox" id="Unsure">
+          <label for="Unsure">Unsure</label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="One-Week">
+          <label for="One-Week">One Week ></label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="One-Month">
+          <label for="One-Month">One Month ></label>
+        </div>
+        <div class="choices">
+          <input type="checkbox" id="OneMonthMore">
+          <label for="OneMonthMore">One Month+</label>
+        </div>
       </div>
     </div>
-    <!--One Card, each of these is a row there will be two rows
-      and each row will have three cards
-      needs to contain h4,p,box, apply and message button-->
+
+    <div id="right-side" class="col-8">
+      
       <div class="row">
-        <div class="column">
-          <!-- the start of one card-->
-          <div class="card">
-
-            <h4>Name of Project</h4>
-            <p>
-              Create the technical documentation for the new applications,
-              interfaces or web sites. Actively participate
-              in design reviews....
-            </p>
-            <!--add dev text button but not a button here-->
-            <div class="box-inside-cards">
-              <!-- SortBy menu TODO: Make sure to add border in CSS -->
-              Stage of Project
+        <div class="col-10">
+          <h2>Displaying 9 Listings</h2>
+        </div>
+        <div class="col-2">
+          <div class="dropdown">
+            <button class="dropbtn">Sort By: 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Newest Post</a>
+              <a href="#">Popular Post</a>
+              <a href="#">Least Applied To</a>
             </div>
-            <!--buttons for action and apply-->
-            <div class="buttons">
-              <div class="action-btns">
-                <button name="apply" class="action-btns apply" type="apply" 					value="apply">Apply
-                </button>
-                <button name="message" class="action-btns message" 								type="message" value="message">Message
-                </button>
+          </div> 
+        </div>
+      </div>
+
+      <div class="card-collection">
+        <div class="row">
+          <div class="col-4">
+            <!-- the start of one card-->
+            <div class="card">
+
+              <h4>Name of Project</h4>
+              <p>
+                Create the technical documentation for the new applications,
+                interfaces or web sites. Actively participate
+                in design reviews....
+              </p>
+              <!--add dev text button but not a button here-->
+              <div class="box-inside-cards">
+                <!-- SortBy menu TODO: Make sure to add border in CSS -->
+                Stage of Project
+              </div>
+              <!--buttons for action and apply-->
+              <div class="buttons">
+                <div class="action-btns">
+                  <button name="apply" class="action-btns apply" type="apply" value="apply">Apply Now</button>
+                  <button name="message" class="action-btns message" type="message" value="message">Message</button>
+                </div>
               </div>
             </div>
           </div>
-		</div>
 
+          <div class="col-4">
+            <div class="card">
 
- <div class="column">
-          <!-- the start of one card-->
-          <div class="card">
-            <h4>Name of Project</h4>
-            <p>
-              Create the technical documentation for the new applications,
-              interfaces or web sites. Actively participate
-              in design reviews....
-            </p>
-            <!--add dev text button but not a button here-->
-            <div class="box-inside-cards">
-              <!-- SortBy menu TODO: Make sure to add border in CSS -->
-              Stage of Project
-            </div>
-            <!--buttons for action and apply-->
-            <div class="buttons">
-              <div class="action-btns">
-                <button name="apply" class="action-btns apply" type="apply" value="apply">Apply
-                </button>
-                <button name="message" class="action-btns message" type="message" value="message">Message
-                </button>
+              <h4>Name of Project</h4>
+              <p>
+                Create the technical documentation for the new applications,
+                interfaces or web sites. Actively participate
+                in design reviews....
+              </p>
+              <!--add dev text button but not a button here-->
+              <div class="box-inside-cards">
+                <!-- SortBy menu TODO: Make sure to add border in CSS -->
+                Stage of Project
+              </div>
+              <!--buttons for action and apply-->
+              <div class="buttons">
+                <div class="action-btns">
+                  <button name="apply" class="action-btns apply" type="apply" value="apply">Apply Now</button>
+                  <button name="message" class="action-btns message" type="message" value="message">Message</button>
+                </div>
               </div>
             </div>
           </div>
-          </div>
 
- <div class="column">
-          <!-- the start of one card-->
-          <div class="card">
-            <h4>Name of Project</h4>
-            <p>
-              Create the technical documentation for the new applications,
-              interfaces or web sites. Actively participate
-              in design reviews....
-            </p>
-            <!--add dev text button but not a button here-->
-            <div class="box-inside-cards">
-              <!-- SortBy menu TODO: Make sure to add border in CSS -->
-              Stage of Project
-            </div>
-            <!--buttons for action and apply-->
-            <div class="buttons">
-              <div class="action-btns">
-                <button name="apply" class="action-btns apply" type="apply" value="apply">Apply
-                </button>
-                <button name="message" class="action-btns message" type="message" value="message">Message
-                </button>
+          <div class="col-4">
+            <div class="card">
+
+              <h4>Name of Project</h4>
+              <p>
+                Create the technical documentation for the new applications,
+                interfaces or web sites. Actively participate
+                in design reviews....
+              </p>
+              <!--add dev text button but not a button here-->
+              <div class="box-inside-cards">
+                <!-- SortBy menu TODO: Make sure to add border in CSS -->
+                Stage of Project
+              </div>
+              <!--buttons for action and apply-->
+              <div class="buttons">
+                <div class="action-btns">
+                  <button name="apply" class="action-btns apply" type="apply" value="apply">Apply Now</button>
+                  <button name="message" class="action-btns message" type="message" value="message">Message</button>
+                </div>
               </div>
             </div>
           </div>
-          </div>
+        </div>
 
-<div class="row">
-        <div class="column">
-          <!-- the start of one card-->
-          <div class="card">
-            <h4>Name of Project</h4>
-            <p>
-              Create the technical documentation for the new applications,
-              interfaces or web sites. Actively participate
-              in design reviews....
-            </p>
-            <!--add dev text button but not a button here-->
-            <div class="box-inside-cards">
-              <!-- SortBy menu TODO: Make sure to add border in CSS -->
-              Stage of Project
-            </div>
-            <!--buttons for action and apply-->
-            <div class="buttons">
-              <div class="action-btns">
-                <button name="apply" class="action-btns apply" type="apply" 					value="apply">Apply
-                </button>
-                <button name="message" class="action-btns message" 								type="message" value="message">Message
-                </button>
+        <div class="row">
+          <div class="col-4">
+            <!-- the start of one card-->
+            <div class="card">
+
+              <h4>Name of Project</h4>
+              <p>
+                Create the technical documentation for the new applications,
+                interfaces or web sites. Actively participate
+                in design reviews....
+              </p>
+              <!--add dev text button but not a button here-->
+              <div class="box-inside-cards">
+                <!-- SortBy menu TODO: Make sure to add border in CSS -->
+                Stage of Project
+              </div>
+              <!--buttons for action and apply-->
+              <div class="buttons">
+                <div class="action-btns">
+                  <button name="apply" class="action-btns apply" type="apply" value="apply">Apply Now</button>
+                  <button name="message" class="action-btns message" type="message" value="message">Message</button>
+                </div>
               </div>
             </div>
           </div>
-		</div>
 
+          <div class="col-4">
+            <div class="card">
 
-         <div class="column">
-          <!-- the start of one card-->
-          <div class="card">
-            <h4>Name of Project</h4>
-            <p>
-              Create the technical documentation for the new applications,
-              interfaces or web sites. Actively participate
-              in design reviews....
-            </p>
-            <!--add dev text button but not a button here-->
-            <div class="box-inside-cards">
-              <!-- SortBy menu TODO: Make sure to add border in CSS -->
-              Stage of Project
-            </div>
-            <!--buttons for action and apply-->
-            <div class="buttons">
-              <div class="action-btns">
-                <button name="apply" class="action-btns apply" type="apply" value="apply">Apply
-                </button>
-                <button name="message" class="action-btns message" type="message" value="message">Message
-                </button>
+              <h4>Name of Project</h4>
+              <p>
+                Create the technical documentation for the new applications,
+                interfaces or web sites. Actively participate
+                in design reviews....
+              </p>
+              <!--add dev text button but not a button here-->
+              <div class="box-inside-cards">
+                <!-- SortBy menu TODO: Make sure to add border in CSS -->
+                Stage of Project
+              </div>
+              <!--buttons for action and apply-->
+              <div class="buttons">
+                <div class="action-btns">
+                  <button name="apply" class="action-btns apply" type="apply" value="apply">Apply Now</button>
+                  <button name="message" class="action-btns message" type="message" value="message">Message</button>
+                </div>
               </div>
             </div>
           </div>
-		</div>
 
- <div class="column">
-          <!-- the start of one card-->
-          <div class="card">
-            <h4>Name of Project</h4>
-            <p>
-              Create the technical documentation for the new applications,
-              interfaces or web sites. Actively participate
-              in design reviews....
-            </p>
-            <!--add dev text button but not a button here-->
-            <div class="box-inside-cards">
-              <!-- SortBy menu TODO: Make sure to add border in CSS -->
-              Stage of Project
-            </div>
-            <!--buttons for action and apply-->
-            <div class="buttons">
-              <div class="action-btns">
-                <button name="apply" class="action-btns apply" type="apply" value="apply">Apply
-                </button>
-                <button name="message" class="action-btns message" type="message" value="message">Message
-                </button>
+          <div class="col-4">
+            <div class="card">
+
+              <h4>Name of Project</h4>
+              <p>
+                Create the technical documentation for the new applications,
+                interfaces or web sites. Actively participate
+                in design reviews....
+              </p>
+              <!--add dev text button but not a button here-->
+              <div class="box-inside-cards">
+                <!-- SortBy menu TODO: Make sure to add border in CSS -->
+                Stage of Project
+              </div>
+              <!--buttons for action and apply-->
+              <div class="buttons">
+                <div class="action-btns">
+                  <button name="apply" class="action-btns apply" type="apply" value="apply">Apply Now</button>
+                  <button name="message" class="action-btns message" type="message" value="message">Message</button>
+                </div>
               </div>
             </div>
           </div>
-          </div>
+        </div>
 
- <div class="column">
-          <!-- the start of one card-->
-          <div class="card">
-            <h4>Name of Project</h4>
-            <p>
-              Create the technical documentation for the new applications,
-              interfaces or web sites. Actively participate
-              in design reviews....
-            </p>
-            <!--add dev text button but not a button here-->
-            <div class="box-inside-cards">
-              <!-- SortBy menu TODO: Make sure to add border in CSS -->
-              Stage of Project
-            </div>
-            <!--buttons for action and apply-->
-            <div class="buttons">
-              <div class="action-btns">
-                <button name="apply" class="action-btns apply" type="apply" value="apply">Apply
-                </button>
-                <button name="message" class="action-btns message" type="message" value="message">Message
-                </button>
+        <div class="row">
+          <div class="col-4">
+            <!-- the start of one card-->
+            <div class="card">
+
+              <h4>Name of Project</h4>
+              <p>
+                Create the technical documentation for the new applications,
+                interfaces or web sites. Actively participate
+                in design reviews....
+              </p>
+              <!--add dev text button but not a button here-->
+              <div class="box-inside-cards">
+                <!-- SortBy menu TODO: Make sure to add border in CSS -->
+                Stage of Project
+              </div>
+              <!--buttons for action and apply-->
+              <div class="buttons">
+                <div class="action-btns">
+                  <button name="apply" class="action-btns apply" type="apply" value="apply">Apply Now</button>
+                  <button name="message" class="action-btns message" type="message" value="message">Message</button>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="col-4">
+            <div class="card">
+
+              <h4>Name of Project</h4>
+              <p>
+                Create the technical documentation for the new applications,
+                interfaces or web sites. Actively participate
+                in design reviews....
+              </p>
+              <!--add dev text button but not a button here-->
+              <div class="box-inside-cards">
+                <!-- SortBy menu TODO: Make sure to add border in CSS -->
+                Stage of Project
+              </div>
+              <!--buttons for action and apply-->
+              <div class="buttons">
+                <div class="action-btns">
+                  <button name="apply" class="action-btns apply" type="apply" value="apply">Apply Now</button>
+                  <button name="message" class="action-btns message" type="message" value="message">Message</button>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <div class="col-4">
+            <div class="card">
+
+              <h4>Name of Project</h4>
+              <p>
+                Create the technical documentation for the new applications,
+                interfaces or web sites. Actively participate
+                in design reviews....
+              </p>
+              <!--add dev text button but not a button here-->
+              <div class="box-inside-cards">
+                <!-- SortBy menu TODO: Make sure to add border in CSS -->
+                Stage of Project
+              </div>
+              <!--buttons for action and apply-->
+              <div class="buttons">
+                <div class="action-btns">
+                  <button name="apply" class="action-btns apply" type="apply" value="apply">Apply Now</button>
+                  <button name="message" class="action-btns message" type="message" value="message">Message</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
-</div>
+
+<br>
+  
 {% endblock %}
