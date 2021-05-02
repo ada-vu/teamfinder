@@ -1,45 +1,27 @@
-{% extends "base_generic.html" %}
+{% extends "base_generic.html" %} {% block content %}
 
-{% block content %}
+<meta
+  name="google-signin-client_id"
+  content="207011433677-q1rgc6epl3uuuhivibjvlam0vv0fk6o8.apps.googleusercontent.com"
+/>
 
-<meta name="google-signin-client_id" content="207011433677-q1rgc6epl3uuuhivibjvlam0vv0fk6o8.apps.googleusercontent.com">
-
-{%load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+{% load widget_tweaks %} {%load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}" />
 
 <div class="sidenav">
-    <div class="login-main-text text-center">
-        <a href="{% url 'index' %}">
-            <img class="center px-5" src="{% static 'images/Logo.png' %}" />
-        </a>
-    </div>
+  <div class="login-main-text text-center">
+    <a href="{% url 'index' %}">
+      <img class="center px-5" src="{% static 'images/Logo.png' %}" />
+    </a>
+  </div>
 
-    <!-- image for login on the left -->
-    <div>
-        <img >
-    </div>
+  <!-- image for login on the left -->
+  <div>
+    <img />
+  </div>
 </div>
 
 <div class="main">
-<<<<<<< Updated upstream
-    <div class="col-md-5"> 
-        
-        <div class="login-form">
-            <div class="login-text">Register</div>
-
-            <form method="POST">
-                
-                <div class="form-group">
-                    <div class="row ">
-                        <div class="col">Username</div>
-
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Username">
-                        </div>
-                    </div>
-                    
-                </div>
-=======
   <div class="col-md-5">
     <div class="register-form">
       {% if next %} {% if user.is_authenticated %}
@@ -55,63 +37,65 @@
           <div class="row">
             <div class="col">{{ form.username.label_tag }}</div>
 
-            <div class="col">{{ form.username|append_attr:"placeholder=Username"|add_class:"form-control" }}</div>
+            <div class="col">
+              {{
+              form.username|append_attr:"placeholder=Username"|add_class:"form-control"
+              }}
+            </div>
           </div>
         </div>
 
         <br />
->>>>>>> Stashed changes
 
-                <br>
+        <div class="form-group">
+          <div class="row align-items-start">
+            <div class="col">{{ form.password1.label_tag }}</div>
 
-<<<<<<< Updated upstream
-                <div class="form-group">
-                    <div class="row align-items-start">
-                        <div class="col">Password</div>
-=======
-            <div class="col">{{ form.password1|append_attr:"placeholder=Password"|add_class:"form-control" }}</div>
+            <div class="col">
+              {{
+              form.password1|append_attr:"placeholder=Password"|add_class:"form-control"
+              }}
+            </div>
           </div>
         </div>
->>>>>>> Stashed changes
 
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Password">
-                        </div>
-                    </div>
-                </div>
+        <br />
 
-                <br>
+        <div class="form-group">
+          <div class="row align-items-start">
+            <div class="col">{{ form.password2.label_tag }}</div>
 
-                <div class="signup-with">
-                    <div class="row align-items-start">
+            <div class="col">{{ form.password2|add_class:"form-control" }}</div>
+          </div>
+        </div>
 
-                        <div class="col-4">
-                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                        </div>
+        <br />
 
-                        <!-- add other platforms -->
-                        <!-- <div class="col-4 icons">
+        <div class="signup-with">
+          <div class="row align-items-start">
+            <div class="col-4">
+              <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            </div>
+
+            <!-- add other platforms -->
+            <!-- <div class="col-4 icons">
                             <img class="icons" src="../../static/images/facebook-logo.png">
                         </div>
-
                         <div class="col-4 icons">
                             <img class="icons" src="../../static/images/github-logo.svg">
                         </div> -->
-
-                    </div>
-                </div>
-
-                <button type="submit" class="submit-button">Register</button>
-            </form>
+          </div>
         </div>
 
-<<<<<<< Updated upstream
-=======
+        {% if form.errors %}
+        <p class="text-danger">{{ form.errors }} Please try again.</p>
+        {% endif %}
+
         <input type="submit" class="submit-button" value="Sign Up" />
         <input type="hidden" name="next" value="{{ next }}" />
       </form>
->>>>>>> Stashed changes
     </div>
+  </div>
 </div>
 
 <script src="https://apis.google.com/js/platform.js" async defer></script>

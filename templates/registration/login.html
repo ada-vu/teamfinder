@@ -20,40 +20,6 @@
 </div>
 
 <div class="main">
-<<<<<<< Updated upstream
-    <div class="col-md-5"> 
-        
-        <div class="login-form">
-            <div class="login-text">Login</div>
-
-            <form method="POST">
-                
-                <div class="form-group">
-                    <div class="row ">
-                        <div class="col">Username</div>
-
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Username">
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <br>
-
-                <div class="form-group">
-                    <div class="row align-items-start">
-                        <div class="col">Password</div>
-
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Password">
-                        </div>
-                    </div>
-                </div>
-
-                <button type="submit" class="submit-button">Login</button>
-            </form>
-=======
   <div class="col-md-5">
     <div class="login-form">
       {% if next %} {% if user.is_authenticated %}
@@ -87,7 +53,6 @@
                 {{ form.password|append_attr:"placeholder=Password"|add_class:"form-control" }}
             </div>
           </div>
->>>>>>> Stashed changes
         </div>
 
     </div>

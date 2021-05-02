@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
-=======
 import datetime
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
->>>>>>> Stashed changes
 from django.views import generic
 from django.views.generic.edit import CreateView
 from .models import Skill, Profile, Project, Application
@@ -20,15 +15,10 @@ def index(request):
 def about(request):
     return render(request, "core/about.html")
 
-<<<<<<< Updated upstream
-def signup(request):
-    return render(request, 'core/signup.html')
-=======
 class SignUpView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy("login")
     template_name = "core/signup.html"
->>>>>>> Stashed changes
 
 def profile(request):
     return render(request, "core/user_profile.html")
