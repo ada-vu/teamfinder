@@ -1,5 +1,9 @@
 # Teamfinder
 
+## Check it out!
+
+http://teamfinder-django.herokuapp.com/core/
+
 ## Quick Start
 
 To get this project up and running locally on your computer:
